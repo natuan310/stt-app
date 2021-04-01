@@ -188,10 +188,13 @@ def listen_print_loop(responses, stream):  # convert voice into text print the d
         # line, so subsequent lines will overwrite them.
 
         if result.is_final:
-            print('FINAL')
+            print('FINAL - ', transcript)
             transcripts_box.insert(
                 END, "\n" + str(corrected_time) + ": " + transcript)
             transcripts_box.see(END)
+            live_trans_msg.update_idletasks()
+
+            transcripts_box.update_idletasks()
 
             stream.is_final_end_time = stream.result_end_time
             stream.last_transcript_was_final = True
@@ -210,6 +213,7 @@ def listen_print_loop(responses, stream):  # convert voice into text print the d
             live_trans_msg.insert(
                 END, "\033" + str(corrected_time) + ": " + transcript + "\r")
             live_trans_msg.update_idletasks()
+            transcripts_box.update_idletasks()
 
             stream.last_transcript_was_final = False
 
@@ -240,6 +244,7 @@ def main():
     transcripts_box.insert(
         END, "=====================================================")
     transcripts_box.update_idletasks()
+    live_trans_msg.update_idletasks()
 
     with mic_manager as stream:
 
@@ -293,7 +298,7 @@ main_frame.grid(column=0, row=0, sticky = "nsew")
 # main_frame.grid_columnconfigure(0, weight = 1)
 
 header = ttk.Label(
-    main_frame, text=""" Sutrix Solution - Speech-To-Text Desktop App""")
+    main_frame, text=""" Sutrix Solutions - Speech-To-Text Desktop App""")
 header.grid(row=0, column=0, columnspan=8)
 
 meeting_name_lbl = ttk.Label(main_frame, text='Meeting name: ')

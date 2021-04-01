@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['C:\\Users\\tee\\Desktop\\Sutrix-Solutions\\stt-app'],
+             pathex=['C:\\Users\\t33\\Desktop\\sutrix\\internal\\stt-app'],
              binaries=[],
              datas=[],
              hiddenimports=[],
