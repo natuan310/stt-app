@@ -188,6 +188,7 @@ def listen_print_loop(responses, stream):  # convert voice into text print the d
         # line, so subsequent lines will overwrite them.
 
         if result.is_final:
+            print('FINAL')
             transcripts_box.insert(
                 END, "\n" + str(corrected_time) + ": " + transcript)
             transcripts_box.see(END)
