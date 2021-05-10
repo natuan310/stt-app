@@ -1,4 +1,10 @@
 *gcp.json
 .env
 .vscode/*
+__pycache__
+
 envs/*
+stt-envs/*
+
+build/*
+dist/*

@@ -1,5 +1,5 @@
 google
 google-cloud-speech
 python-dotenv
-pyaudio
+# pyaudio
 termcolor
