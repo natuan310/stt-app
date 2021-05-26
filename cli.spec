@@ -6,8 +6,10 @@ block_cipher = None
 
 a = Analysis(['cli.py'],
              pathex=['C:\\Users\\tee\\Desktop\\Sutrix-Solutions\\stt-app'],
-             binaries=[],
-             datas=[],
+             binaries=binaries,
+             datas=[
+               ('roots.pem', 'grpc/_cython/_credentials/'),
+             ],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
